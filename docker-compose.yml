@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  datalens:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: datalens_ai_prod
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - HOST=0.0.0.0
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+    volumes:
+      - ./data/uploads:/app/data/uploads
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/healthz"]
+      interval: 30s
+      timeout: 5s
+      retries: 3

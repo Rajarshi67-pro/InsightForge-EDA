@@ -1,0 +1,37 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Environment variables & secrets
+.env
+.env.local
+*.key
+*.pem
+.env.example
+
+# IDEs & OS metadata
+.DS_Store
+.vscode/
+.idea/
+
+# Streamlit runtime
+.streamlit/
+
+# Reports & exports
+reports/*.pdf
+reports/*.json
+data/uploads/*
+!data/uploads/.gitkeep
+
+# Logs & temp
+logs/
+*.log
+.pytest_cache/
+
