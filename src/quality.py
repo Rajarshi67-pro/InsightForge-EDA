@@ -1,5 +1,5 @@
 """
-Data Quality Engine for DataLens AI
+Data Quality Engine for InsightForge AI
 Performs missing value audits, duplicate row detection, deterministic outlier analysis (IQR & Z-score),
 and provides automated data cleaning utilities.
 """

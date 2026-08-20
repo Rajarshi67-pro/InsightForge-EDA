@@ -1,5 +1,5 @@
 """
-DataLens AI - Production-Grade Grounded Data & AI Analytics Platform
+InsightForge AI - Production-Grade Grounded Data & AI Analytics Platform
 """
 
 from .profiler import DataProfiler, ColumnType

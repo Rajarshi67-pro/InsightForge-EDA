@@ -1,5 +1,5 @@
 """
-Agentic Multi-Agent Orchestration Engine for DataLens AI
+Agentic Multi-Agent Orchestration Engine for InsightForge AI
 Coordinates specialized autonomous agents (InsightAgent, AnomalyAgent, ReportAgent)
 to generate actionable insights.
 """

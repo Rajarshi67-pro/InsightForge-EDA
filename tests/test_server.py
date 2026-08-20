@@ -1,5 +1,5 @@
 """
-Server Endpoint Integration Tests for DataLens AI FastAPI Backend
+Server Endpoint Integration Tests for InsightForge AI FastAPI Backend
 """
 
 import unittest
@@ -7,7 +7,7 @@ from fastapi.testclient import TestClient
 from server import app
 
 
-class TestDataLensServer(unittest.TestCase):
+class TestInsightForgeServer(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):

@@ -1,6 +1,6 @@
 import unittest
 import pandas as pd
-from datalens.quality import DataQualityEngine
+from src.quality import DataQualityEngine
 
 class TestDataQualityEngine(unittest.TestCase):
     def test_quality_penalties(self):

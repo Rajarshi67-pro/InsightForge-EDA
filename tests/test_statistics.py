@@ -1,6 +1,6 @@
 import unittest
 import pandas as pd
-from datalens.statistics import StatisticalEngine
+from src.statistics import StatisticalEngine
 
 class TestStatisticalEngine(unittest.TestCase):
     def test_correlation_safeguards(self):

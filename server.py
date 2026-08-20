@@ -1,5 +1,5 @@
 """
-DataLens AI - FastAPI High-Performance Backend Server
+InsightForge AI - FastAPI High-Performance Backend Server
 Serves static assets and provides RESTful APIs for the bespoke frontend.
 """
 
@@ -19,21 +19,21 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-from datalens.loader import DataLoader, load_dataset
-from datalens.privacy import PrivacyScanner
-from datalens.profiler import DataProfiler, ColumnType
-from datalens.quality import DataQualityEngine
-from datalens.statistics import StatisticalEngine
-from datalens.ml_engine import MLEngine
-from datalens.ai_engine import AIEngine
-from datalens.local_ai import get_local_ai_config, local_ai_enabled
-from datalens.rag_engine import RAGEngine
-from datalens.reports import ReportGenerator
-from datalens.visualizer import VisualizerEngine
-from datalens.logger import app_logger
+from src.loader import DataLoader, load_dataset
+from src.privacy import PrivacyScanner
+from src.profiler import DataProfiler, ColumnType
+from src.quality import DataQualityEngine
+from src.statistics import StatisticalEngine
+from src.ml_engine import MLEngine
+from src.ai_engine import AIEngine
+from src.local_ai import get_local_ai_config, local_ai_enabled
+from src.rag_engine import RAGEngine
+from src.reports import ReportGenerator
+from src.visualizer import VisualizerEngine
+from src.logger import app_logger
 
 # Initialize FastAPI App
-app = FastAPI(title="DataLens AI API", version="1.0.0")
+app = FastAPI(title="InsightForge AI API", version="1.0.0")
 
 # Enable CORS for local development
 app.add_middleware(
@@ -123,7 +123,7 @@ async def upload_file(file: UploadFile = File(...)):
         safe_filename = os.path.basename(file.filename)
         
         # Securely stream to a temporary file
-        fd, temp_file_path = tempfile.mkstemp(prefix="datalens_", suffix=f"_{safe_filename}")
+        fd, temp_file_path = tempfile.mkstemp(prefix="insightforge_", suffix=f"_{safe_filename}")
         with os.fdopen(fd, "wb") as f:
             shutil.copyfileobj(file.file, f)
 
@@ -438,7 +438,7 @@ async def export_csv():
     return Response(
         content=csv_str,
         media_type="text/csv",
-        headers={"Content-Disposition": f"attachment; filename=datalens_cleaned_{SESSION['dataset_name']}"}
+        headers={"Content-Disposition": f"attachment; filename=insightforge_cleaned_{SESSION['dataset_name']}"}
     )
 
 
@@ -463,7 +463,7 @@ async def export_pdf():
     return Response(
         content=pdf_bytes,
         media_type="application/pdf",
-        headers={"Content-Disposition": f"attachment; filename=datalens_report_{SESSION['dataset_name']}.pdf"}
+        headers={"Content-Disposition": f"attachment; filename=insightforge_report_{SESSION['dataset_name']}.pdf"}
     )
 
 
@@ -491,7 +491,7 @@ async def export_html():
     return Response(
         content=html_str,
         media_type="text/html",
-        headers={"Content-Disposition": f"attachment; filename=datalens_report_{SESSION['dataset_name']}.html"}
+        headers={"Content-Disposition": f"attachment; filename=insightforge_report_{SESSION['dataset_name']}.html"}
     )
 
 
@@ -514,7 +514,7 @@ async def export_json():
     return Response(
         content=json_str,
         media_type="application/json",
-        headers={"Content-Disposition": f"attachment; filename=datalens_audit_{SESSION['dataset_name']}.json"}
+        headers={"Content-Disposition": f"attachment; filename=insightforge_audit_{SESSION['dataset_name']}.json"}
     )
 
 
@@ -527,7 +527,7 @@ app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 @app.get("/healthz")
 async def health_check():
     """Cloud liveness & readiness health check endpoint."""
-    return {"status": "healthy", "service": "DataLens AI", "version": "1.0.0"}
+    return {"status": "healthy", "service": "InsightForge AI", "version": "1.0.0"}
 
 
 @app.get("/")
@@ -537,11 +537,11 @@ async def root():
     if os.path.exists(index_file):
         with open(index_file, "r", encoding="utf-8") as f:
             return HTMLResponse(content=f.read())
-    return HTMLResponse("<h1>DataLens AI server is running. (Building custom frontend...)</h1>")
+    return HTMLResponse("<h1>InsightForge AI server is running. (Building custom frontend...)</h1>")
 
 
 if __name__ == "__main__":
     host = os.getenv("HOST", "0.0.0.0")
     port = int(os.getenv("PORT", 8000))
-    app_logger.info(f"Starting DataLens AI production server on http://{host}:{port}")
+    app_logger.info(f"Starting InsightForge AI production server on http://{host}:{port}")
     uvicorn.run(app, host=host, port=port, log_level="info")

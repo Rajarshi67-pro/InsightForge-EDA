@@ -1,6 +1,6 @@
 import unittest
 import pandas as pd
-from datalens.profiler import DataProfiler, ColumnType
+from src.profiler import DataProfiler, ColumnType
 
 class TestDataProfiler(unittest.TestCase):
     def test_column_classification(self):

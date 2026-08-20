@@ -1,5 +1,5 @@
 """
-Production Test Suite for DataLens AI
+Production Test Suite for InsightForge AI
 Validates all pipeline stages from Ingestion, Non-Analyzable Validation, and Resume Analysis to ML, RAG, and Reports.
 """
 
@@ -11,21 +11,21 @@ import tempfile
 import unittest
 import pandas as pd
 
-from datalens.loader import load_dataset, DataLoader
-from datalens.privacy import PrivacyScanner
-from datalens.profiler import DataProfiler, ColumnType
-from datalens.quality import DataQualityEngine
-from datalens.statistics import StatisticalEngine
-from datalens.visualizer import VisualizerEngine
-from datalens.ml_engine import MLEngine
-from datalens.ai_engine import AIEngine
-from datalens.rag_engine import RAGEngine
-from datalens.agents import AgentOrchestrator
-from datalens.reports import ReportGenerator
-from datalens.resume_engine import ResumeEngine
+from src.loader import load_dataset, DataLoader
+from src.privacy import PrivacyScanner
+from src.profiler import DataProfiler, ColumnType
+from src.quality import DataQualityEngine
+from src.statistics import StatisticalEngine
+from src.visualizer import VisualizerEngine
+from src.ml_engine import MLEngine
+from src.ai_engine import AIEngine
+from src.rag_engine import RAGEngine
+from src.agents import AgentOrchestrator
+from src.reports import ReportGenerator
+from src.resume_engine import ResumeEngine
 
 
-class TestDataLensPipeline(unittest.TestCase):
+class TestInsightForgePipeline(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):

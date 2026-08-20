@@ -1,5 +1,5 @@
 """
-LLM Provider Abstraction Layer for DataLens AI
+LLM Provider Abstraction Layer for InsightForge AI
 Allows plug-and-play LLM integrations (Gemini, Ollama, OpenAI, etc.)
 while keeping the core AI Engine agnostic to the specific API.
 """

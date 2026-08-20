@@ -1,5 +1,5 @@
 """
-Universal High-Resilience PDF Extractor for DataLens AI.
+Universal High-Resilience PDF Extractor for InsightForge AI.
 Combines 5 extraction tiers:
 1. Spatial Word-Clustering (2-column, Canva, LaTeX, and multi-box resumes).
 2. Layout-Tolerant pdfplumber extraction.
@@ -14,7 +14,7 @@ from typing import Dict, Any, List, Tuple, Optional
 import pdfplumber
 from pdfminer.high_level import extract_text as pdfminer_extract_text
 from pdfminer.layout import LAParams
-from datalens.logger import get_logger
+from src.logger import get_logger
 
 logger = get_logger("PDFExtractor")
 
@@ -274,7 +274,7 @@ class PDFExtractor:
                         ]
                     )
                     if response and response.text and len(response.text.strip()) > 10:
-                        logger.info(f"DataLens AI Vision OCR ({m}) transcribed '{os.path.basename(file_path)}'.")
+                        logger.info(f"InsightForge AI Vision OCR ({m}) transcribed '{os.path.basename(file_path)}'.")
                         return response.text.strip()
                 except Exception as e1:
                     err_str = str(e1)

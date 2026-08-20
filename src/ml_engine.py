@@ -1,5 +1,5 @@
 """
-Machine Learning Engine for DataLens AI
+Machine Learning Engine for InsightForge AI
 Supports automated and user-guided Classification, Regression, and Clustering workflows.
 """
 

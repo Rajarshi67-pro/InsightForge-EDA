@@ -1,6 +1,6 @@
 import unittest
 import pandas as pd
-from datalens.visualizer import VisualizerEngine
+from src.visualizer import VisualizerEngine
 import plotly.graph_objects as go
 
 class TestVisualizerEngine(unittest.TestCase):

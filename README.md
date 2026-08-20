@@ -1,10 +1,10 @@
-# 🔬 DataLens AI
+# 🔬 InsightForge AI
 
 [![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110+-009688.svg)](https://fastapi.tiangolo.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-**DataLens AI** is a production-grade, grounded exploratory data analysis (EDA), automated data quality, machine learning, and AI analyst platform. Built on the core philosophy that **deterministic Python and statistics calculate the truth, while AI reasons and interprets it**, DataLens AI completely eliminates LLM hallucinations in tabular data analysis.
+**InsightForge AI** is a production-grade, grounded exploratory data analysis (EDA), automated data quality, machine learning, and AI analyst platform. Built on the core philosophy that **deterministic Python and statistics calculate the truth, while AI reasons and interprets it**, InsightForge AI completely eliminates LLM hallucinations in tabular data analysis.
 
 It comes equipped with a **bespoke custom frontend** (HTML5, Vanilla CSS design system, responsive Vanilla JS, and Chart.js) powered by a high-performance **FastAPI backend REST server**.
 
@@ -95,8 +95,8 @@ DATA QUALITY ENGINE         STATISTICAL ENGINE           VISUALIZER ENGINE
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/DataLensAI.git
-cd DataLensAI
+git clone https://github.com/your-username/InsightForgeAI.git
+cd InsightForgeAI
 
 # Create and activate virtual environment
 python3 -m venv .venv
@@ -127,7 +127,7 @@ python -m unittest discover -s tests
 
 ### Optional AI Configuration
 
-DataLens AI works without any external API key. It uses deterministic local analytics first, can call a local Ollama-compatible model when available, and only uses Gemini as an optional enhancement when `GEMINI_API_KEY` or `GOOGLE_API_KEY` is configured.
+InsightForge AI works without any external API key. It uses deterministic local analytics first, can call a local Ollama-compatible model when available, and only uses Gemini as an optional enhancement when `GEMINI_API_KEY` or `GOOGLE_API_KEY` is configured.
 
 ```bash
 # Optional local model settings
@@ -143,7 +143,7 @@ export GEMINI_API_KEY=your_key_here
 ## 📂 Project Structure
 
 ```
-DataLensAI/
+InsightForgeAI/
 │
 ├── server.py                   # FastAPI Production Web Server
 ├── main.py                     # Command-Line Interface Terminal Runner
@@ -166,7 +166,7 @@ DataLensAI/
 │   ├── test_pipeline.py        # Core Engine Unit Tests
 │   └── test_server.py          # FastAPI Endpoint Integration Tests
 │
-└── datalens/                   # Core Analytical Engines
+└── insightforge/                   # Core Analytical Engines
     ├── __init__.py             # Package Exports
     ├── loader.py               # Ingestion with Auto-Encoding & Sampling
     ├── privacy.py              # AI Safety & PII Scanner
@@ -187,7 +187,7 @@ DataLensAI/
 ## 📜 License
 MIT License. Built for data scientists, engineers, and analysts who demand grounded truth in AI analysis.
 
-DataLensAI/
+InsightForgeAI/
 │
 ├── server.py                   # High-Performance FastAPI Backend REST Server
 ├── main.py                     # Terminal Command-Line Interface
@@ -205,7 +205,7 @@ DataLensAI/
 │   ├── test_pipeline.py        # Core Engine Unit Tests
 │   └── test_server.py          # FastAPI Endpoint Integration Tests
 │
-└── datalens/                   # Core Analytical Engines
+└── insightforge/                   # Core Analytical Engines
     ├── loader.py               # Resilient Ingestion & Encoding Detection
     ├── privacy.py              # AI Safety & PII Scanner (Emails, Phones, PAN, Aadhaar, SSN)
     ├── profiler.py             # Semantic Type Inference (ID, Num, Cat, Date, Bool)

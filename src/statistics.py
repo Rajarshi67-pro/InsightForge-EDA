@@ -1,5 +1,5 @@
 """
-Statistical Analysis Engine for DataLens AI
+Statistical Analysis Engine for InsightForge AI
 Computes descriptive statistics, distributions, skewness, kurtosis,
 and Pearson/Spearman correlation matrices.
 """

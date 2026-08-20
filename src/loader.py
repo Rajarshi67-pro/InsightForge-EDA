@@ -1,4 +1,4 @@
-"""Universal Data Loader Module for DataLens AI.
+"""Universal Data Loader Module for InsightForge AI.
 
 Supports high-resilience ingestion of:
 - CSV & Delimited files (.csv, .tsv, .txt, .dat)
@@ -14,7 +14,7 @@ import json
 import sqlite3
 from typing import Optional, Tuple, Dict, Any, List
 import pandas as pd
-from datalens.logger import get_logger
+from src.logger import get_logger
 
 logger = get_logger("DataLoader")
 
@@ -231,9 +231,9 @@ def _load_sqlite(file_path: str, table_name: Optional[str] = None) -> Tuple[pd.D
 
 def _load_pdf(file_path: str) -> Tuple[pd.DataFrame, Dict[str, Any]]:
     """Extracts tabular data, marksheets, or resume text matrices from PDF documents using high-resilience PDFExtractor."""
-    from datalens.pdf_extractor import PDFExtractor
-    from datalens.resume_engine import ResumeEngine
-    from datalens.marksheet_engine import MarksheetEngine
+    from src.pdf_extractor import PDFExtractor
+    from src.resume_engine import ResumeEngine
+    from src.marksheet_engine import MarksheetEngine
 
     api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
     full_text, all_tables = PDFExtractor.extract_full_text(file_path, api_key=api_key)

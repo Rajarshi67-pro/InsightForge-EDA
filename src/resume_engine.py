@@ -1,5 +1,5 @@
 """
-Deep Thinking AI Resume & Career Intelligence Engine for DataLens AI.
+Deep Thinking AI Resume & Career Intelligence Engine for InsightForge AI.
 Provides multi-dimensional executive scoring out of 10.0,
 ATS architectural analysis, line-by-line Google XYZ rewrites,
 recruiter red-flag scans, and automated interview question synthesis.
@@ -10,7 +10,7 @@ import re
 import math
 from typing import Dict, Any, List, Optional
 import pdfplumber
-from datalens.logger import get_logger
+from src.logger import get_logger
 
 logger = get_logger("ResumeEngine")
 
@@ -79,7 +79,7 @@ class ResumeEngine:
     @classmethod
     def from_pdf(cls, file_path: str, api_key: Optional[str] = None) -> "ResumeEngine":
         """Extracts text content from a PDF file using high-resilience PDFExtractor."""
-        from datalens.pdf_extractor import PDFExtractor
+        from src.pdf_extractor import PDFExtractor
         full_text, _ = PDFExtractor.extract_full_text(file_path, api_key=api_key)
 
         if not full_text:

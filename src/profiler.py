@@ -1,5 +1,5 @@
 """
-Data Profiler Module for DataLens AI
+Data Profiler Module for InsightForge AI
 Classifies column semantic types and extracts core dataset metadata.
 """
 

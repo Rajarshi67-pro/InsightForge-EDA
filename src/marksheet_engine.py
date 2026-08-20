@@ -1,4 +1,4 @@
-"""Academic Marksheet, State Board & Multi-Semester Transcript Engine for DataLens AI.
+"""Academic Marksheet, State Board & Multi-Semester Transcript Engine for InsightForge AI.
 
 Supports CBSE, ICSE, State Boards (WBCHSE, Maharashtra HSC, UP Board, etc.),
 single marksheets, multi-semester college transcripts (SGPA + CGPA progression),
@@ -10,7 +10,7 @@ import re
 import json
 from typing import Dict, Any, List, Optional, Tuple
 import pandas as pd
-from datalens.logger import get_logger
+from src.logger import get_logger
 
 logger = get_logger("MarksheetEngine")
 
@@ -58,7 +58,7 @@ class MarksheetEngine:
         return has_subjects and (has_marks_pattern or keyword_hits >= 2)
 
     def analyze(self) -> Dict[str, Any]:
-        """Conducts full marksheet evaluation, multi-semester SGPA/CGPA aggregation, and DataLens AI guidance."""
+        """Conducts full marksheet evaluation, multi-semester SGPA/CGPA aggregation, and InsightForge AI guidance."""
         # 1. First attempt AI Structured Extraction for multi-semester or single marksheet
         ai_data = self._ai_extract()
         if ai_data and (ai_data.get("subjects") or ai_data.get("semesters")):
@@ -73,7 +73,7 @@ class MarksheetEngine:
         if not self.client:
             return None
 
-        prompt = f"""You are DataLens AI Academic Intelligence Engine.
+        prompt = f"""You are InsightForge AI Academic Intelligence Engine.
 Analyze the following marksheet / scorecard / multi-semester transcript text and extract structured academic data into pure JSON:
 
 DOCUMENT TEXT:
@@ -132,7 +132,7 @@ Respond ONLY with a JSON object in this exact schema without markdown backticks:
                 except Exception:
                     continue
         except Exception as e:
-            logger.warning(f"DataLens AI marksheet extraction failed: {e}")
+            logger.warning(f"InsightForge AI marksheet extraction failed: {e}")
 
         return None
 
@@ -305,7 +305,7 @@ Respond ONLY with a JSON object in this exact schema without markdown backticks:
             tier_color = "#EF4444"
             badge = "Requires Focused Remediation"
 
-        # Generate DataLens AI Career Guidance
+        # Generate InsightForge AI Career Guidance
         guidance = self._generate_guidance(data, overall_pct, strongest, weakest, sub_list)
 
         return {
@@ -349,7 +349,7 @@ Respond ONLY with a JSON object in this exact schema without markdown backticks:
         sub_summary = ", ".join([f"{s['subject']}: {s['marks']}/{s['max']} ({s['percentage']}%)" for s in sub_list])
 
         if self.client:
-            prompt = f"""You are DataLens AI Principal Academic Counselor & Career Strategist.
+            prompt = f"""You are InsightForge AI Principal Academic Counselor & Career Strategist.
 Evaluate the following student marksheet performance:
 - Examination: {data.get('examination_name')} ({data.get('institution_board')})
 - Overall Aggregate: {overall_pct}% (GPA: {round(overall_pct/10.0, 2)}/10.0)
@@ -362,7 +362,7 @@ Generate an authoritative, empowering, and actionable Academic Guidance Report i
 2. 🎯 **Top 3 Recommended Higher Education / Career Specializations** (Tailored strictly to their best subjects)
 3. 🛠️ **Targeted Improvement Strategy for {weakest['subject']}** (Concrete study techniques & resources)
 4. 🚀 **Next Milestone Strategic Roadmap** (Immediate 6-month academic goals)
-Do NOT mention any third-party AI provider names, refer strictly to DataLens AI."""
+Do NOT mention any third-party AI provider names, refer strictly to InsightForge AI."""
 
             try:
                 models_to_try = [os.getenv("MODEL_NAME", "gemini-2.5-flash"), "gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash-latest", "gemini-1.5-pro-latest", "gemini-1.5-flash"]
@@ -371,7 +371,7 @@ Do NOT mention any third-party AI provider names, refer strictly to DataLens AI.
                         resp = self.client.models.generate_content(model=m, contents=prompt)
                         if resp and resp.text:
                             return {
-                                "mode": "datalens_ai_intelligence",
+                                "mode": "insightforge_ai_intelligence",
                                 "markdown": resp.text.strip(),
                                 "strong_pathways": [
                                     f"Specialized Degrees in {strongest['subject']} & Applied Sciences",
@@ -382,7 +382,7 @@ Do NOT mention any third-party AI provider names, refer strictly to DataLens AI.
                     except Exception:
                         continue
             except Exception as ge:
-                logger.warning(f"DataLens AI marksheet guidance generation failed: {ge}")
+                logger.warning(f"InsightForge AI marksheet guidance generation failed: {ge}")
 
         # Deterministic Academic Guidance Fallback
         return {

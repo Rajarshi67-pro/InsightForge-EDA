@@ -1,5 +1,5 @@
 """
-DataLens AI - Terminal Command-Line Interface & Engine Runner
+InsightForge AI - Terminal Command-Line Interface & Engine Runner
 Phases 1-6 CLI Profiler, Quality Auditor, Statistical Engine, and Grounded AI Analyst.
 """
 
@@ -10,10 +10,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-from datalens.profiler import DataProfiler
-from datalens.quality import DataQualityEngine
-from datalens.statistics import StatisticalEngine
-from datalens.ai_engine import AIEngine
+from src.profiler import DataProfiler
+from src.quality import DataQualityEngine
+from src.statistics import StatisticalEngine
+from src.ai_engine import AIEngine
 
 
 def format_header(title: str, width: int = 65) -> str:
@@ -36,7 +36,7 @@ def run_cli_pipeline(file_path: str):
         print(f"\n[!] Error reading CSV file: {e}")
         return
 
-    print(format_header("DATALENS AI v1.0 - DATA PROFILER & ANALYST"))
+    print(format_header("INSIGHTFORGE AI v1.0 - DATA PROFILER & ANALYST"))
     print(f"File Path    : {file_path}")
     print(f"Total Rows   : {len(df):,}")
     print(f"Total Columns: {len(df.columns)}")

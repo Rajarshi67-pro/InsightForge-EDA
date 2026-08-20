@@ -1,5 +1,5 @@
 """
-AI Safety & Privacy Scanner for DataLens AI
+AI Safety & Privacy Scanner for InsightForge AI
 Scans datasets for Personally Identifiable Information (PII) and sensitive fields,
 masking sensitive data before any LLM ingestion.
 """

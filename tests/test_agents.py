@@ -1,5 +1,5 @@
 import unittest
-from datalens.agents import InsightAgent, AnomalyAgent, ReportAgent
+from src.agents import InsightAgent, AnomalyAgent, ReportAgent
 
 class TestActionableInsightsEngine(unittest.TestCase):
     def setUp(self):

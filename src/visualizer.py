@@ -1,5 +1,5 @@
 """
-Visualization Engine for DataLens AI
+Visualization Engine for InsightForge AI
 Generates intelligent, interactive Plotly charts tailored to data types and relationships.
 """
 

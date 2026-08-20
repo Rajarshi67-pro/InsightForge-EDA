@@ -18,7 +18,7 @@ class PDFReport(FPDF):
     def header(self):
         self.set_font("Helvetica", "B", 14)
         self.set_text_color(30, 41, 59)
-        self.cell(0, 8, "DATALENS AI - EXECUTIVE AUDIT REPORT", border=False, align="C", new_x="LMARGIN", new_y="NEXT")
+        self.cell(0, 8, "INSIGHTFORGE AI - EXECUTIVE AUDIT REPORT", border=False, align="C", new_x="LMARGIN", new_y="NEXT")
         self.set_font("Helvetica", "I", 8)
         self.set_text_color(100, 116, 139)
         self.cell(0, 4, "Grounded Intelligence & Data Quality Verification", border=False, align="C", new_x="LMARGIN", new_y="NEXT")

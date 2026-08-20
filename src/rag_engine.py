@@ -1,5 +1,5 @@
 """
-RAG (Retrieval-Augmented Generation) Knowledge Base for DataLens AI
+RAG (Retrieval-Augmented Generation) Knowledge Base for InsightForge AI
 Maintains an indexed domain knowledge repository of statistical concepts, ML metrics,
 and data engineering best practices to enrich AI reasoning.
 """
